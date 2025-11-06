@@ -1,0 +1,6 @@
+key_pair            = "dempkppoct31"
+security_group_name = "demosgoct31"
+instance_type_name  = "t3.micro"
+#ami_name            = "ami-02b8269d5e85954ef"
+vpc_cidr            = "10.0.0.0/16"
+subnet_cidr         = "10.0.0.0/24"
