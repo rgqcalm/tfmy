@@ -1,0 +1,113 @@
+#read a whole file and print each line
+import os
+
+# with open("tst.txt","r") as file:
+#     for line in file:
+#         print(line.strip())  #strip() to remove leading/trailing whitespace
+
+# #write to a file append mode
+# with open("tst.txt","a") as file:        
+#     file.write("Hello, this is a test file.\n")
+#     file.write("This is the second line.\n")
+#     file.write("This is the third line.\n")
+
+
+# #write to a file overwrite mode
+# with open("tst.txt","w") as file:        
+#     file.write("File overwritten. This is the new first line.\n")
+#     file.write("This is the new second line.\n")  
+
+#create a new directory
+# new_folder="my_new_folder"
+# os.mkdir(new_folder)
+# print(f"Directory '{new_folder}' created.")
+
+# #list files in current directory
+# files=os.listdir(".") # . represents current directory
+# print(files)
+
+#joining paths
+dir_name="my_new_folder"
+file_name="example.txt"
+full_relpath=os.path.join(dir_name, file_name) #joining directory and file name to create full path
+print("Full relpath:", full_relpath)
+full_abspath=os.path.join(os.getcwd(), dir_name, file_name) #joining current working directory, directory and file name to create full path
+print("Full abspath:", full_abspath)
+
+#check if file or directory exists
+if os.path.exists(full_abspath):
+    print("File exists.")
+else:
+    print("File does not exist.")
+#########################################################################################################
+#modules/packages helps in organizing code and reusing it across multiple programs
+#standard library modules, third party modules, custom modules
+import math
+from math import sqrt
+from math import pi, factorial
+from math import *  #importing all functions and constants from math module
+import numpy as np #aliasing
+#import numpy 
+import array
+import random as rd  #aliasing
+import os #importing os module for operating system related tasks
+import json  #importing json module for data serialization
+import csv  #importing csv module for handling csv files
+import datetime  #importing datetime module for date and time operations
+from datetime import timedelta #importing specific classes from datetime module
+
+math.sqrt(16)  #using sqrt function from math module
+print("Square root of 16 is:", math.sqrt(16))   
+print("Square root of 25 is:", sqrt(25))  #using sqrt function directly after importing
+print("Value of pi is:", pi)  #using pi constant from math module
+print("Factorial of 5 is:", factorial(5))  #using factorial function from math module
+np.array([1,2,3,4,5])  #using array function from numpy module
+np.array([1,2,3,4,5])  #using array function from numpy module without alias
+print("Numpy array:", np.array([1,2,3,4,5]))
+arr=array.array('i',[1,2,3,4,5])  #using array function from array module
+print("Array module array:", arr)
+
+print("Random number between 1 and 10:", rd.randint(1,10))  #using randint function from random module
+print("Random choice from list:", rd.choice(['apple', 'banana', 'cherry'])) #using choice function from random module
+
+print(os.getcwd())  #using getcwd function from os module to get current working directory
+os.listdir()  #using listdir function from os module to list files and directories in current directory
+print("Files and directories in current directory:", os.listdir())
+# os.mkdir("new_folder")  #using mkdir function from os module to create a new directory
+# print("New folder created")
+
+data={"name":"krish","age":22,"course":"mlops"}
+print(type(data))
+json_str=json.dumps(data)  #using dumps function from json module to serialize data to JSON
+
+print("JSON data:", json_str)
+print("Type of json_str:", type(json_str))
+data_back=json.loads(json_str)  #using loads function from json module to deserialize JSON back
+print("Deserialized data:", data_back)
+print("Type of data_back:", type(data_back))
+
+with open('data.csv', mode='w', newline='') as file:  #using csv module to write to a csv file
+    writer = csv.writer(file)
+    writer.writerow(['Name', 'Age', 'Course'])
+    writer.writerow(['krish', 22, 'mlops'])
+    writer.writerow(['rahul', 25, 'data science'])
+print("CSV file created with sample data.")
+
+with open('newdata.csv', mode='w', newline='') as file:  #using csv module to write to a csv file
+    writer = csv.writer(file)
+    writer.writerow(['surname', 'Age', 'Course'])
+    writer.writerow(['ray', 22, 'mlops'])
+    writer.writerow(['ghosh', 25, 'data science'])
+print("CSV file created with sample data.")
+
+
+with open('newdata.csv', mode='r') as file:  #using csv module to read from a csv file
+    reader = csv.reader(file)
+    for row in reader:
+        print(row)
+
+now = datetime.datetime.now()  #using datetime module to get current date and time
+print("Current date and time:", now)
+
+yesterday = now - timedelta(days=2)  #using timedelta class from datetime module
+print("Yesterday's date and time:", yesterday)

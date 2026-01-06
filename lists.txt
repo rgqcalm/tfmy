@@ -1,0 +1,85 @@
+
+values= [10, 20, 30, 40, 50,"rahul", True, 3.14]
+#List is a datatype that can hold multiple values and different datatypes
+print(values[0]) #accessing first element
+print(values[-1]) #accessing last element
+print(values[2:8]) #slicing from index 2 to 4
+values.insert(3, "hello") #inserting at index 3
+values[2]="changed" #modifying value at index 2
+#del values[3] #deleting value at index 7
+print(values)
+
+todolist=["Buy groceries", "Clean the house", "Finish the report"]
+
+#adding to the list
+todolist.append("Walk the dog") #adds at the end
+todolist.append("Read a book")
+todolist.append("Exercise")
+todolist.append("work on project")
+
+#removing from the list
+todolist.remove("Walk the dog")
+
+print(todolist)
+
+if "Buy groceries" in todolist:
+ print("Don't forget to take a bath!")
+else:
+    print("You can take a bath later.")
+
+print("to do list remaining")  
+
+for item in todolist:
+    print("-", item)
+
+str="krish90"
+for b in str:
+    print(b)
+
+count=0
+while count<5:
+    print("Count is:", count)
+    count += 1
+
+lst=[1, 2, 3, 4, 5,4,3]
+set_lst=set(lst)
+print(set_lst)
+
+a = [10, 20, 30, 40, 50,70]
+
+for i in range(len(a)):
+    print(range(len(a)))
+
+    if a[i] == 10:
+        a[i] = 99
+
+print(a)
+a.pop(1) #removes the element at index 1
+print(a)
+
+
+#tuple is immutable, same as list but cannot be modified
+
+val=(10,20,30,40,50,"rahul", True, 3.14)
+print(val[2]) #accessing element at index 2
+
+#dictionary is key value pair
+dic = {"name":"krish","age":22,"course":"mlops"}
+print(dic["age"]) #accessing value using key
+student={"name":"krish","age":25,"course":"mlops"}
+print(student["name"]) #accessing value using key
+print(student.get("course")) #another way to access value using get method
+
+dict={}  #empty dictionary  
+dict["brand"]="ford"
+dict["model"]="mustang"
+dict["year"]=1964
+dict["colour"]="red"
+
+print(dict)
+
+
+
+
+
+

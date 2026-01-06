@@ -1,0 +1,16 @@
+#printing and variable assignment
+print(1+1)  
+b=7 #no data return type required
+print(b)
+print(type(b))
+print("value of b is:",b)
+Str="hello"
+print(Str)
+print(type(Str))
+
+
+
+b,c,d=10,2.9,"greetings"
+#print("value is"+b) #this will give error as we are trying to concatenate str and int
+print("value is",b) #correct way to print different datatypes together
+print("{} {}".format("Value is",b)) #using format method to print 

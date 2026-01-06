@@ -1,0 +1,121 @@
+# Self keyword is mandatory for calling variable names into method, it is an object
+#and used to differentiate between instance variable and class variable
+# Instance and class variables(attached to object) have whole different purposes
+# Constructor name should be __init__
+# New keyword is not required to create object
+# self represents the current object (instance).
+# It allows methods to access and modify the object’s own data.
+
+
+class Calculator:
+    num=100     #class variable
+    #default constructor without params
+    def __init__(self,a,b):
+        self.fistnum=a  #instance variable
+        self.secondnum=b
+        print("i am called automatically when object is created")
+
+    def getdata(self):  
+        print("i am in getdata method")
+        return 0
+
+    def summation(self):
+        return self.fistnum+self.secondnum+obj.num    
+        
+
+obj=Calculator(3,8) #syntax to create object of a class
+print(obj.num)
+print(obj.getdata())
+
+obj1=Calculator(9,3) #syntax to create object of a class
+print(obj1.num)
+print(obj1.summation())
+
+obj2=Calculator(10,3) #syntax to create object of a class
+print(obj2.num)
+print(obj2.summation())
+
+#class is a blueprint for creating objects
+class car:
+    def __init__(self,color,capacity):
+        self.color=color
+        self.capacity=capacity
+        self.tyre="4"
+        self.engine="v8"
+# audi=car()
+# bmw=car()
+
+# ##instance variables
+# audi.color="Red" #instance variable
+# audi.capacity=5
+
+# print(type(audi))
+
+audi=car("Red",44)
+print("the color is " +audi.color)
+print("the capacity is " +str(audi .capacity))
+
+bmw=car("Black",55)
+print("the color is " +bmw.color)
+print("the capacity is " +str(bmw.capacity))
+
+
+
+
+
+class Dog:
+    def __init__(self, name, breed):
+        self.name = name
+        self.breed = breed
+
+    def bark(self):  #instance method
+        return f"{self.breed} says Woof!"
+
+my_dog = Dog("Buddy", "Golden Retriever")   
+my_dog.bark()  #calling instance method
+print(my_dog.bark())
+
+#polymorphism is the ability to present the same interface for differing underlying data types.
+#method overriding
+class Animal:
+    def sound(self):
+        return "Some generic animal sound"
+class Cat(Animal):
+    def sound(self):  #overriding parent method
+        return "Meow"
+my_cat=Cat()
+print(my_cat.sound())  #calling overridden method
+print(super(Cat,my_cat).sound())  #calling parent method using super
+
+#inheritance is a way to form new classes using classes that have already been defined.
+from oopsdemo import Calculator
+
+class Childclass(Calculator):   #inheritance
+    num2=200
+
+    def __init__(self):  #child class constructor
+        Calculator.__init__(self,10,2) #invoke parent constructor its a must because parent class has parameterized constructor
+
+
+    def getalldata(self):
+        return self.num2+self.num+self.summation()
+    
+objchild= Childclass()    
+print(objchild.getalldata())
+    
+from oopsdemo3 import Dog
+
+class Puppy(Dog):  #inheritance
+    def __init__(self, name, breed, age):
+        Dog.__init__(self, name, breed)  #invoke parent constructor
+
+        self.age = age  #additional attribute for child class
+
+    def puppy_info(self):
+        return f"{self.name} is a {self.breed} and is {self.age} months old."
+    
+pup=Puppy("rocky","lab",7)
+print("the name is " +pup.name)
+print("the breed is " +pup.breed)
+
+print(pup.puppy_info())
